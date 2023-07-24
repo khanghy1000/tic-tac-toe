@@ -1,0 +1,74 @@
+@font-face {
+	font-family: Gotham Rounded;
+	src: url(./fonts/gotham.otf);
+}
+
+* {
+	font-family: Gotham Rounded, sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(to right, #00eeff, #00ff64);
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.container {
+	height: 700px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+}
+
+.message,
+.restart-btn {
+	flex: 1 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-board {
+	background-color: #14b8a6;
+	height: 500px;
+	width: 500px;
+	display: grid;
+	padding: 10px;
+	gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	border-radius: 10px;
+}
+
+.game-board .cell {
+	background-color: rgba(255, 255, 255, 0.75);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 100px;
+	cursor: pointer;
+}
+
+[data-token='1']::after {
+	content: 'X';
+}
+
+[data-token='2']::after {
+	content: 'O';
+}
+
+.restart-btn > button {
+	font-size: 1.5rem;
+	width: 130px;
+	height: 55px;
+	border-radius: 10px;
+	border: none;
+	background: linear-gradient(to right, #2dd4bf, #22d3ee);
+	cursor: pointer;
+}
