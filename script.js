@@ -125,13 +125,13 @@ const GameController = (firstPlayerName, secondPlayerName) => {
 
 	const getMessage = () => message;
 
-	const getActivePlayer = () => activePlayer;
+	const getCheckBoard = () => checkBoard;
 
 	return {
 		playRound,
 		getBoard: gameBoard.getBoard,
-		getActivePlayer,
 		getMessage,
+		getCheckBoard,
 	};
 };
 
@@ -163,7 +163,11 @@ const ScreenController = () => {
 	};
 
 	const clickHandlerBoard = e => {
-		if (e.target.dataset.token) return;
+		if (
+			gameController.getCheckBoard() === 1 ||
+			gameController.getCheckBoard() === 2
+		) return;
+			if (e.target.dataset.token) return;
 		const selectedRow = e.target.dataset.row;
 		const selectedColumn = e.target.dataset.col;
 		if (!selectedColumn) return;
