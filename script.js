@@ -75,10 +75,10 @@ const Cell = () => {
 	return { getValue, addToken };
 };
 
-const GameController = () => {
+const GameController = (firstPlayerName, secondPlayerName) => {
 	let gameBoard = GameBoard();
-	let player1 = Player('player1', 1);
-	let player2 = Player('player2', 2);
+	let player1 = Player(firstPlayerName, 1);
+	let player2 = Player(secondPlayerName, 2);
 
 	let activePlayer = player1;
 
